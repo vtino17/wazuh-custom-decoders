@@ -1,0 +1,5 @@
+<decoder name="mikrotik">
+  <prematch>^\d+</prematch>
+  <regex>^(\d+) (\S+) (\S+) (\S+) (\S+),(\S+) \S+: (\S+)</regex>
+  <order>facility, timestamp, hostname, process, topics, logtype, detail</order>
+</decoder>
