@@ -1,3 +1,6 @@
+# wazuh-custom-decoders
+
+[![CI](https://img.shields.io/github/actions/workflow/status/vtino17/wazuh-custom-decoders/ci.yml?style=flat-square&label=CI)](https://github.com/vtino17/wazuh-custom-decoders/actions)
 # Wazuh Custom Decoders
 
 Production-ready Wazuh SIEM decoders, rules, and alerts for infrastructure that off-the-shelf Wazuh doesn't cover.
@@ -154,3 +157,4 @@ wazuh-custom-decoders/
 ---
 
 **Built for the Wazuh community by [vtino17](https://github.com/vtino17).**
+
