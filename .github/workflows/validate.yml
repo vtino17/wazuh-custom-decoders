@@ -14,8 +14,9 @@ jobs:
         run: sudo apt-get update -q && sudo apt-get install -y -q libxml2-utils
       - name: Validate XML decoders
         run: |
+          shopt -s nullglob
           for d in decoders rules; do
-            [ -d "$d" ] && for f in "$d"/*.xml; do
-              [ -f "$f" ] && xmllint --noout "$f" && echo "✓ $f" || exit 1
+            for f in "$d"/*.xml; do
+              xmllint --noout "$f" && echo "✓ $f" || exit 1
             done
           done
