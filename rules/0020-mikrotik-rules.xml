@@ -1,6 +1,35 @@
-<group name="mikrotik">
+<group name="mikrotik,">
   <rule id="100001" level="0">
     <decoded_as>mikrotik</decoded_as>
     <description>MikroTik generic event</description>
+  </rule>
+
+  <rule id="100002" level="7">
+    <if_sid>100001</if_sid>
+    <match>firewall,</match>
+    <regex type="pcre2">(?i)\b(drop|denied)\b</regex>
+    <description>MikroTik firewall denied traffic</description>
+    <group>firewall,network,</group>
+  </rule>
+
+  <rule id="100003" level="10">
+    <if_sid>100001</if_sid>
+    <match>login failure</match>
+    <description>MikroTik authentication failure</description>
+    <group>authentication_failed,</group>
+  </rule>
+
+  <rule id="100004" level="5">
+    <if_sid>100001</if_sid>
+    <match>changed by</match>
+    <description>MikroTik configuration changed</description>
+    <group>configuration_changed,</group>
+  </rule>
+
+  <rule id="100005" level="3">
+    <if_sid>100001</if_sid>
+    <match>logged in</match>
+    <description>MikroTik user logged in</description>
+    <group>authentication_success,</group>
   </rule>
 </group>
