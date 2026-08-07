@@ -1,5 +1,5 @@
 <decoder name="mikrotik">
-  <prematch>^\d+</prematch>
-  <regex>^(\d+) (\S+) (\S+) (\S+) (\S+),(\S+) \S+: (\S+)</regex>
-  <order>facility, timestamp, hostname, process, topics, logtype, detail</order>
+  <prematch type="pcre2">^&lt;\d+&gt;</prematch>
+  <regex type="pcre2">^&lt;(\d+)&gt;(\S+\s+\d+\s+\S+)\s+(\S+)\s+(.*)$</regex>
+  <order>facility, timestamp, hostname, detail</order>
 </decoder>
