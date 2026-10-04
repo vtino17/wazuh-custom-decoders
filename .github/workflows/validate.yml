@@ -17,6 +17,6 @@ jobs:
           shopt -s nullglob
           for d in decoders rules; do
             for f in "$d"/*.xml; do
-              xmllint --noout "$f" && echo "✓ $f" || exit 1
+              xmllint --noout "$f" && echo "OK $f" || exit 1
             done
           done
